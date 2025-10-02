@@ -33,8 +33,11 @@ class pa {
         this.outputFilePath = outputFilePath;
         this.filterBy = filterBy || ";";
         this.options = {
-            AddNew : options.AddNew ? options.AddNew : false,
-             
+            AddNew: options.AddNew || false,
+            Override: options.Override || false,
+            Append: options.Append || false
+
+
         };
     }
     filterFile() {
@@ -48,13 +51,12 @@ class pa {
 
     }
 
-    mountFile() {
-        // Platform-aware command
-        const openCommand = process.platform === 'win32'
-            ? `start "" "${outputFilePath}"`
-            : process.platform === 'darwin'
-                ? `open "${outputFilePath}"`
-                : `xdg-open "${outputFilePath}"`; // Linux
+   mountFile() {
+    const openCommand = process.platform === 'win32'
+        ? `start "" "${this.outputFilePath}"`
+        : process.platform === 'darwin'
+            ? `open "${this.outputFilePath}"`
+            : `xdg-open "${this.outputFilePath}"`;
 
 
         exec(openCommand, (err) => {
@@ -66,22 +68,29 @@ class pa {
         });
     }
 
-    program() {
-        switch (this.options) {
-            case this.options.AddNew || this.options.Override : {
-                // creating a new file
-                const filtered = this.filterFile()
-                console.log("fitered >> ",filtered)
-                fs.writeFile(this.outputFilePath, filtered, 'utf-8')
-                break;
+      program() {
+            const filtered = this.filterFile();
+            console.log("filtered >>", filtered);
+
+            if (this.options.AddNew || this.options.Override) {
+                fs.writeFileSync(this.outputFilePath, filtered, 'utf-8');
+            } else if (this.options.Append) {
+                fs.appendFileSync(this.outputFilePath, filtered, 'utf-8');
             }
 
-            case this.options.Append : {
-                  const filtered = this.filterFile()
-                console.log("fitered >> ",filtered)
-                fs.appendFile(this.outputFilePath, filtered, 'utf-8')
-                break;
-            }
+            this.mountFile();
         }
-    }
-} 
+ 
+   }
+
+
+
+
+export function papa(htmlFilePath, outputFilePath, filterBy, options = { AddNew: true }) {
+    let p = new pa(htmlFilePath, outputFilePath, filterBy, options)
+   // console.log(p)
+    p.program();
+    return p
+}
+
+papa("../html/index.html", "../public/index.html")
