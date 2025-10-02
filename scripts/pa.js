@@ -70,7 +70,7 @@ class pa {
 
       program() {
             const filtered = this.filterFile();
-            console.log("filtered >>", filtered);
+            //console.log("filtered >>", filtered);
 
             if (this.options.AddNew || this.options.Override) {
                 fs.writeFileSync(this.outputFilePath, filtered, 'utf-8');
