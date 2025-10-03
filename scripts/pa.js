@@ -15,8 +15,7 @@ import { exec } from "child_process";
 
     fs.appendFileSync(outputFilePath, filteredHtml, 'utf8');
 
-    htmlContent = null;
-    filteredHtml = null;
+
 } */
 
 
