@@ -1,0 +1,324 @@
+/* 
+Styling file for Tribute Project
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  background-color: rgb(247, 247, 247);
+  margin: 0;
+  padding: 0;
+}
+
+/* Use border-box globally so padding and borders are included in element widths/heights */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+header {
+  text-align: center;
+}
+.headings {
+  align-items: center;
+}
+
+.dancing-sub {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Navbar Container */
+.navbar {
+  /* background-color: #333; */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* Navigation List */
+.nav-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+/* Navigation Links */
+.nav-list a {
+  text-decoration: none;
+  color: rgb(24, 21, 21);
+  font-size: 18px;
+  padding: 8px 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect */
+.nav-list a:hover {
+  background-color: #555;
+  color: whitesmoke;
+  border-radius: 5px;
+}
+
+.nav-list a:active {
+  color: rgb(42, 71, 165);
+}
+
+/* ****************** MAIN SECTION *************************** */
+main {
+  margin: 32px;
+}
+
+section {
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  background-color: linear-gradient(to bottom right, #dfdfdf, #ffffff);
+  margin-bottom: 2rem;
+  height: 100%;
+}
+
+section .section-header {
+  background: linear-gradient(90deg, #d8d8d8 0%, #dbdbdb 100%);
+  padding: 0.9rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  margin-bottom: 1rem;
+}
+section .section-content {
+  padding: 0.9rem;
+}
+
+section h2 {
+  text-shadow: 2px 2px whitesmoke;
+  font-size: 32px;
+  font-weight: bold;
+  padding-left: 1rem;
+}
+
+/* About section: side-by-side layout on large screens, stacked on small screens */
+section article {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  row-gap: 1rem;
+}
+
+/* Constrain the image inside the about article so it doesn't grow too large */
+section article img {
+  width: 320px;
+  max-width: 40%;
+  height: auto;
+
+  border-radius: 50%;
+}
+
+section article p {
+  flex: 1 1 auto;
+  text-align: left;
+  line-height: 2rem;
+  line-break: auto;
+  width: 100%;
+  font-size: large;
+  margin-inline: 2rem;
+}
+
+/* Responsive: stack image and text on narrow viewports */
+@media (max-width: 800px) {
+  section article {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  section article img {
+    max-width: 100%;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  section article p {
+    text-align: left;
+    width: 100%;
+  }
+}
+
+/* ----------------- GALLERY STYLING (box-model based) ----------------- */
+/* Use a responsive grid to lay out gallery items. Each figure is a box that uses
+   margin, border and padding to create consistent spacing and visual separation. */
+section#gallery {
+  /* spacing from other sections */
+  height: 100vh;
+  position: relative; /* create stacking context for background text */
+  overflow: hidden;
+}
+
+.gallery-content {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  place-content: center;
+  gap: 8px;
+  position: relative;
+  z-index: 2; /* sit above the background text */
+}
+
+/* place the large heading behind the gallery items */
+.background-text {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0; /* under the .gallery-content */
+  pointer-events: none; /* let clicks go through to gallery content */
+}
+
+.background-text h1 {
+  margin: 0;
+  color: #000;
+  opacity: 0.06; /* subtle background imprint */
+  font-weight: 700;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  /* scale responsively but keep it large on desktop */
+  font-size: clamp(64px, 12vw, 200px);
+  line-height: 1;
+  transform: translateY(8%); /* slight vertical offset for visual balance */
+  white-space: nowrap;
+  user-select: none; /* prevent text selection */
+  transform: translateY(21%);
+}
+
+/* On smaller screens keep the background text subtle or hide it for clarity */
+@media (max-width: 900px) {
+  .background-text h1 {
+    font-size: clamp(36px, 10vw, 120px);
+    opacity: 0.035;
+    transform: translateY(6%);
+  }
+}
+
+@media (max-width: 520px) {
+  .background-text {
+    display: none;
+  }
+}
+
+/* Clean, professional gallery cards */
+.gallery-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem 1.25rem;
+  align-items: start;
+}
+
+.gallery-item {
+  background: linear-gradient(180deg, #ffffff, #fbfbfb);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 10px;
+  padding: 0.5rem;
+  box-shadow: 0 8px 20px rgba(16,24,40,0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms;
+}
+
+.gallery-item:focus-within,
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(16,24,40,0.08);
+}
+
+.gallery-media {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.gallery-item figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  color: #333;
+  text-align: center;
+}
+
+/* accessibility: highlight keyboard focus */
+.gallery-item a:focus,
+.gallery-item:focus-within {
+  outline: 3px solid rgba(66, 153, 225, 0.25);
+  outline-offset: 4px;
+}
+
+@media (max-width: 520px) {
+  .gallery-media { height: 160px; }
+}
+
+/* Small tweak for very small screens to reduce padding and shadow for compactness */
+@media (max-width: 420px) {
+  section#gallery {
+    gap: 0.6rem;
+    padding: 0.5rem;
+  }
+
+  section#gallery figure {
+    padding: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+  }
+}
+
+/* Banner container */
+.banner {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f4f4f4;
+  padding: 10px 0;
+  position: relative;
+  height: 100%;
+}
+
+/* Moving content */
+.banner-content {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 18px;
+  animation: scrollBanner 10s linear infinite;
+}
+
+/* Keyframes for animation */
+@keyframes scrollBanner {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  #gallery-media {
+    --s: 12px;
+  }
+}
