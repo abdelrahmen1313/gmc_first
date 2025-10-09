@@ -2,7 +2,6 @@
 Styling file for Tribute Project
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 body {
@@ -91,10 +90,14 @@ section {
 }
 
 section .section-header {
-  background: linear-gradient(90deg, #d8d8d8 0%, #dbdbdb 100%);
+/* background: linear-gradient(90deg, #d8d8d8 0%, #dbdbdb 100%); */
+  border-bottom: 2px solid #ccc;
   padding: 0.9rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
   margin-bottom: 1rem;
+}
+
+.animated-header {
+  animation: slideInFromLeft 0.5s ease-out;
 }
 section .section-content {
   padding: 0.9rem;
@@ -105,6 +108,7 @@ section h2 {
   font-size: 32px;
   font-weight: bold;
   padding-left: 1rem;
+  font-family: "Roboto", sans-serif;
 }
 
 /* About section: side-by-side layout on large screens, stacked on small screens */
@@ -137,6 +141,11 @@ section article p {
   margin-inline: 2rem;
 }
 
+section a {
+  color: rgb(31, 31, 31);
+  text-decoration: none;
+}
+
 /* Responsive: stack image and text on narrow viewports */
 @media (max-width: 800px) {
   section article {
@@ -162,7 +171,7 @@ section article p {
    margin, border and padding to create consistent spacing and visual separation. */
 section#gallery {
   /* spacing from other sections */
-  height: 100vh;
+  height: 65vh;
   position: relative; /* create stacking context for background text */
   overflow: hidden;
 }
@@ -171,7 +180,6 @@ section#gallery {
   display: grid;
   grid-template-columns: repeat(3, auto);
   place-content: center;
-  gap: 8px;
   position: relative;
   z-index: 2; /* sit above the background text */
 }
@@ -228,21 +236,21 @@ section#gallery {
 
 .gallery-item {
   background: linear-gradient(180deg, #ffffff, #fbfbfb);
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 10px;
   padding: 0.5rem;
-  box-shadow: 0 8px 20px rgba(16,24,40,0.04);
+  box-shadow: 0 8px 20px rgba(16, 24, 40, 0.04);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms;
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 220ms;
 }
 
 .gallery-item:focus-within,
 .gallery-item:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(16,24,40,0.08);
+  box-shadow: 0 18px 40px rgba(16, 24, 40, 0.08);
 }
 
 .gallery-media {
@@ -268,7 +276,9 @@ section#gallery {
 }
 
 @media (max-width: 520px) {
-  .gallery-media { height: 160px; }
+  .gallery-media {
+    height: 160px;
+  }
 }
 
 /* Small tweak for very small screens to reduce padding and shadow for compactness */
@@ -302,6 +312,36 @@ section#gallery {
   animation: scrollBanner 10s linear infinite;
 }
 
+.hero-text {
+  animation: fadeInZoom 1.5s ease-in-out;
+}
+
+
+
+/* ************ ANIMATIONS ****************** */
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* Keyframes for animation */
 @keyframes scrollBanner {
   0% {
@@ -322,3 +362,111 @@ section#gallery {
     --s: 12px;
   }
 }
+
+/* ----------------- TIMELINE STYLING ----------------- */
+/* Horizontal timeline for wide screens, vertical stack on small screens */
+section#timeline .section-content {
+  padding: 1.25rem 0.9rem;
+}
+
+/* the UL becomes the visual timeline */
+.timeline-list {
+  list-style: none;
+  margin: 0;
+  padding: 2rem 1rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.timeline-list::before {
+  /* central horizontal line */
+  content: '';
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  top: 50%;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.06), rgba(0,0,0,0.08));
+  transform: translateY(-50%);
+  z-index: 0;
+  border-radius: 2px;
+}
+
+.timeline-list li {
+  position: relative;
+  z-index: 1;
+  min-width: 140px;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0.6rem 0.75rem;
+}
+
+.timeline-list li::before {
+  /* event marker */
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid #2a6bf3;
+  box-shadow: 0 4px 10px rgba(42,107,243,0.12);
+}
+
+.timeline-list li strong {
+  display: block;
+  font-size: 1rem;
+  color: #111;
+  margin-bottom: 0.25rem;
+}
+
+
+
+/* Responsive: on small screens switch to vertical timeline */
+@media (max-width: 800px) {
+  .timeline-list {
+    display: block;
+    padding-left: 2.5rem;
+  }
+
+  .timeline-list::before {
+    /* vertical line */
+    left: 1rem;
+    right: auto;
+    top: 1rem;
+    bottom: 1rem;
+    width: 4px;
+    height: auto;
+    transform: none;
+  }
+
+  .timeline-list li {
+    display: block;
+    text-align: left;
+    padding: 1rem 1rem 1rem 2.25rem;
+    margin-bottom: 1.25rem;
+    max-width: none;
+  }
+
+  .timeline-list li::before {
+    left: 0.5rem;
+    top: 1rem;
+    transform: translateY(0);
+  }
+}
+
+/* small accessibility/focus styles */
+.timeline-list li:focus-within,
+.timeline-list li:hover {
+  transform: translateY(-4px);
+}
+

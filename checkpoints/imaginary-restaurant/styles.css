@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quicksand:wght@300..700&display=swap");
+:root {
+  --chicken-gold: #f4c542; /* Primary accent, buttons, highlights */
+  --brick-red: #a52020; /* Header text, call-to-action contrast */
+  --warm-beige: #f9f3e9; /* Background, section dividers */
+  --midnight-blue: #2c3e50; /* Footer, nav bar, text overlays */
+  --soft-teal: #4abdac; /* Secondary accents, hover effects */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--warm-beige);
+}
+
+body p {
+  font-family: "Bebas Neue", sans-serif;
+  word-spacing: 1.2;
+  line-height: 1.6;
+}
+
+/* navbar */
+
+a.navbar-brand {
+  font-weight: 800;
+  font-family: "Bebas Neue", sans-serif;
+  word-spacing: 1.2rem;
+}
+
+a.nav-link {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+/* carousel */
+
+.frosted-glass {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  background-color: rgba(255, 255, 255, 0.3); /* White with opacity */
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.carousel-caption h3 {
+  color: #a12c2f;
+  text-shadow: 2px 2px 1rem whitesmoke;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+}
+
+.carousel-caption p {
+  line-height: 1.6;
+  text-shadow: 1px 2px 8px rgba(43, 41, 41, 0.507);
+  background: var(--brick-red); /* Semi-transparent background */
+  word-spacing: 2px;
+}
+
+/* cta */
+
+.welcome {
+  margin-block: 32px;
+  text-align: center;
+}
+
+/* menu section */
+
+#menu {
+  padding-block: 24px;
+}
+
+#menu .card {
+  height: 460px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+/* Override Bootstrap: enforce fixed height and consistent cropping for menu images */
+#menu .card-img-top {
+  /* fixed height for consistent cards */
+  height: 260px !important;
+  max-height: 260px !important;
+  min-height: 260px !important;
+  width: 100% !important;
+  object-fit: cover !important; /* crop to fill */
+  display: block; /* avoid inline image whitespace */
+  line-height: 0;
+}
+
+/* Small-screen fallback: let image size naturally for better responsiveness */
+@media (max-width: 767.98px) {
+  #menu .card-img-top {
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+  }
+}
+
+
+/* Ensure consistent vertical distribution inside card bodies */
+#menu .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+
+
+
+.card-inner-text p strong {
+ position: absolute;
+ bottom: 0;
+ left: 1;
+ margin-right: 16px;
+ margin-bottom: 16px;
+}
+
+
+
+/* Responsive: let cards size naturally on small screens */
+@media (max-width: 767.98px) {
+  #menu .card {
+    height: auto;
+  }
+  #menu .card-img-top {
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* buttons */
+
+form .normal-btn {
+  align-self: flex-end; /* stick to the right */
+}
+.normal-btn {
+  border: 1px solid #2c3e50;
+  border-radius: 12px;
+  background-color: var(--warm-beige);
+
+  width: 56px;
+}
+
+.normal-btn:hover {
+  background-color: var(--chicken-gold);
+  border: 1px solid #2c3e50;
+}
+
+#cta-btn {
+  animation: flash 3s infinite ease-in-out;
+  border: 1px solid #2c3e50;
+  border-radius: 12px;
+}
+
+/* animations */
+@keyframes flash {
+  0% {
+    background-color: var(--warm-beige);
+  }
+
+  50% {
+    background-color: var(--chicken-gold);
+  }
+
+  100% {
+    background-color: var(--warm-beige);
+  }
+}
+
+/* footer */
+footer a {
+  color: #2c3e50;
+  font-family: "Quicksand";
+  text-decoration: none;
+}

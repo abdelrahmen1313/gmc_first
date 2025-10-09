@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOS POLLOS HERMANOS</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-4">
+      <!-- Tab Navigation for Projects -->
+      <ul class="nav nav-tabs" id="projectTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="restaurant-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#restaurant"
+            type="button"
+            role="tab"
+            aria-controls="restaurant"
+            aria-selected="true"
+          >
+            Restaurant
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="travel-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#travel"
+            type="button"
+            role="tab"
+            aria-controls="travel"
+            aria-selected="false"
+          >
+            Travel Agency
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content" id="projectTabsContent">
+        <!-- Restaurant Project Content -->
+        <div
+          class="tab-pane fade show active"
+          id="restaurant"
+          role="tabpanel"
+          aria-labelledby="restaurant-tab"
+        >
+          <!-- Header Section: Navbar -->
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+              <a class="navbar-brand" href="#">Fictional Restaurant</a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#restaurantNavbar"
+                aria-controls="restaurantNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="restaurantNavbar">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#restaurant-home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#menu">Menu</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#about">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <!-- Hero Section -->
+          <div
+            id="restaurant-home"
+            class="bg-image text-center text-white"
+            style="
+              background-image: url('https://via.placeholder.com/1200x500');
+              background-size: cover;
+              background-position: center;
+              height: 500px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <div>
+              <h1>Welcome to Our Restaurant</h1>
+              <button class="btn btn-primary">Reserve Now</button>
+            </div>
+          </div>
+
+          <!-- Menu Section -->
+          <div id="menu" class="container my-5">
+            <h2 class="text-center mb-4">Our Menu</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="https://via.placeholder.com/300x200"
+                    class="card-img-top"
+                    alt="Dish 1"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Dish 1</h5>
+                    <p class="card-text">Delicious dish description.</p>
+                    <p class="card-text"><strong>$10.99</strong></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="https://via.placeholder.com/300x200"
+                    class="card-img-top"
+                    alt="Dish 2"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Dish 2</h5>
+                    <p class="card-text">Delicious dish description.</p>
+                    <p class="card-text"><strong>$12.99</strong></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="https://via.placeholder.com/300x200"
+                    class="card-img-top"
+                    alt="Dish 3"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Dish 3</h5>
+                    <p class="card-text">Delicious dish description.</p>
+                    <p class="card-text"><strong>$9.99</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- About Us Section -->
+          <div id="about" class="container my-5">
+            <h2 class="text-center mb-4">About Us</h2>
+            <div class="row">
+              <div class="col-md-6">
+                <img
+                  src="https://via.placeholder.com/500x300"
+                  class="img-fluid"
+                  alt="About us image"
+                />
+              </div>
+              <div class="col-md-6 d-flex align-items-center">
+                <p>
+                  Our restaurant offers an exquisite dining experience with a
+                  blend of modern and classic cuisine. Join us for a delightful
+                  meal in a warm and welcoming atmosphere.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Section -->
+          <div id="contact" class="container my-5">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Your name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="name@example.com"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+          </div>
+
+          <!-- Footer -->
+          <footer class="bg-light text-center py-3">
+            <p>&copy; 2025 Fictional Restaurant. All rights reserved.</p>
+            <div>
+              <a href="#" class="me-2">Facebook</a>
+              <a href="#" class="me-2">Twitter</a>
+              <a href="#">Instagram</a>
+            </div>
+          </footer>
+        </div>
+
+        <!-- Travel Agency Project Content -->
+        <div
+          class="tab-pane fade"
+          id="travel"
+          role="tabpanel"
+          aria-labelledby="travel-tab"
+        >
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+              <a class="navbar-brand" href="#">Travel Agency</a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#travelNavbar"
+                aria-controls="travelNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="travelNavbar">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#travel-home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#destinations">Destinations</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#tours">Tours</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#travel-contact">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <!-- Hero Section -->
+          <div
+            id="travel-home"
+            class="bg-image text-center text-white"
+            style="
+              background-image: url('https://via.placeholder.com/1200x500');
+              background-size: cover;
+              background-position: center;
+              height: 500px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <div>
+              <h1>Explore the World with Us</h1>
+              <p>Your adventure starts here</p>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+
+          <!-- Destinations Section -->
+          <div id="destinations" class="container my-5">
+            <h2 class="text-center mb-4">Top Destinations</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="https://via.placeholder.com/300x200"
+                    class="card-img-top"
+                    alt="Destination 1"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Destination 1</h5>
+                    <p class="card-text">Brief description of destination 1.</p>
+                    <a href="#" class="btn btn-secondary">Learn More</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="https://via.placeholder.com/300x200"
+                    class="card-img-top"
+                    alt="Destination 2"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Destination 2</h5>
+                    <p class="card-text">Brief description of destination 2.</p>
+                    <a href="#" class="btn btn-secondary">Learn More</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="https://via.placeholder.com/300x200"
+                    class="card-img-top"
+                    alt="Destination 3"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Destination 3</h5>
+                    <p class="card-text">Brief description of destination 3.</p>
+                    <a href="#" class="btn btn-secondary">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tours Section -->
+          <div id="tours" class="container my-5">
+            <h2 class="text-center mb-4">Tour Packages</h2>
+            <div class="accordion" id="tourAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    Tour Package 1
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#tourAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>Details about tour package 1.</p>
+                    <a href="#">View Details</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    Tour Package 2
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#tourAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>Details about tour package 2.</p>
+                    <a href="#">View Details</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    Tour Package 3
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#tourAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>Details about tour package 3.</p>
+                    <a href="#">View Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form Section -->
+          <div id="travel-contact" class="container my-5">
+            <h2 class="text-center mb-4">Get in Touch</h2>
+            <form>
+              <div class="mb-3">
+                <label for="travelName" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="travelName"
+                  placeholder="Your name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="travelEmail" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="travelEmail"
+                  placeholder="name@example.com"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="destinationInterest" class="form-label"
+                  >Destination of Interest</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="destinationInterest"
+                  placeholder="Enter a destination"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="travelMessage" class="form-label">Message</label>
+                <textarea
+                  class="form-control"
+                  id="travelMessage"
+                  rows="3"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+
+          <!-- Footer -->
+          <footer class="bg-dark text-center text-white py-3">
+            <p>&copy; 2025 Travel Agency. All rights reserved.</p>
+            <div>
+              <a href="#" class="text-white me-2">Facebook</a>
+              <a href="#" class="text-white me-2">Twitter</a>
+              <a href="#" class="text-white">Instagram</a>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
