@@ -53,11 +53,16 @@ a.nav-link {
   padding: 20px;
 }
 
+.carousel-caption {
+    padding: 8px;
+}
+
 .carousel-caption h3 {
   color: #a12c2f;
   text-shadow: 2px 2px 1rem whitesmoke;
   font-weight: 800;
   background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+
 }
 
 .carousel-caption p {
