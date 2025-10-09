@@ -87,6 +87,10 @@ a.nav-link {
   margin-bottom: 1rem;
 }
 
+#menu .card:hover {
+  border: 1px solid var(--chicken-gold);
+
+}
 /* Override Bootstrap: enforce fixed height and consistent cropping for menu images */
 #menu .card-img-top {
   /* fixed height for consistent cards */
