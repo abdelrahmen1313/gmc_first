@@ -1,0 +1,39 @@
+ALGORITHM SENTENCER
+VAR
+  sentence : STRING
+  sentence_length : INTEGER := 0
+  number_of_words : INTEGER := 0
+  number_of_vowels : INTEGER := 0
+  current_char : CHAR := "";
+
+BEGIN
+
+ FUNCTION isVowel(caracter : STRING) : BOOLEAN
+  IF (caracter = "a" || caracter = "e" || caracter = "i" || caracter = "o") THEN
+  RETURN TRUE
+  ELSE 
+  RETURN FALSE
+  END_IF
+ END_FUNCTION
+ 
+ READ(sentence)
+
+ WHILE (current_char <> ".")  DO
+  IF (current_char = " " && sentence_length > 0) THEN
+  number_of_words := number_of_words + 1
+  END_IF
+  IF (isVowel(current_char)) THEN
+  number_of_vowels := number_of_vowels + 1
+  END_IF
+  sentence_length := sentence_length + 1
+  current_char := sentence[sentence_length]
+
+ END_WHILE
+
+ write("sentence length :", sentence_length)
+ write("number of words :", number_of_words)
+ write("number of vowels :", number_of_vowels)
+ 
+
+  
+END
