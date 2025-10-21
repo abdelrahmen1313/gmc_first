@@ -2,30 +2,14 @@ import fs from "fs";
 import { exec } from "child_process";
 
 
-/*function cleanify(htmlFilePath, outputFilePath) {
-
-
-    let htmlContent = fs.readFileSync(htmlFilePath, 'utf8');
-    let filteredHtml = htmlContent.split('').filter(char => char !== ';').join('');
-
-    console.log(htmlContent);
-    console.log("***********filtered*******************");
-    console.log(filteredHtml);
-
-
-    fs.appendFileSync(outputFilePath, filteredHtml, 'utf8');
-
-
-} */
 
 
 
 
 
-/*   **********************   REVERTING TO CLASS ********************* */
 
 
-//cleanify("../html/index.html", "../public/index.html", {})
+
 class pa {
     constructor(htmlFilePath, outputFilePath, filterBy, options) {
         this.htmlFilePath = htmlFilePath;
