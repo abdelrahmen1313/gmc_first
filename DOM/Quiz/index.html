@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <title>Quiz</title>
+    <style>
+      ul {
+        padding-block: 16px;
+        list-style: none;
+      }
+      ul li {
+        padding-block: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Quiz Title</h1>
+    </header>
+    <main>
+        <ul class="question">
+          Question 1 -
+          <strong
+            >Quel est le rôle principal de Node.js dans un projet Full-Stack
+            JavaScript ?
+          </strong>
+          <br />
+          <li>
+            <input type="radio" id="question1_A" name="question1" value="A" />
+            <label for="question1_A"
+              >Gérer le style et l’interface utilisateur</label
+            >
+          </li>
+          <li>
+            <input type="radio" id="question1_B" name="question1" value="B" />
+            <label for="question1_B"
+              >Exécuter du code JavaScript côté serveur</label
+            >
+          </li>
+          <li>
+            <input type="radio" id="question1_C" name="question1" value="C" />
+            <label for="question1_C">Compiler le code JavaScript en HTML</label>
+          </li>
+        </ul>
+
+        <ul class="question">
+          Question 2 -
+          <strong
+            >Quelle est la fonction de package.json dans un projet Node.js
+            ?</strong
+          >
+          <br />
+          <li>
+            <input type="radio" id="question2_A" name="question2" value="A" />
+            <label for="question2_A"
+              >Gérer les dépendances et les scripts du projet</label
+            >
+          </li>
+          <li>
+            <input type="radio" id="question2_B" name="question2" value="B" />
+            <label for="question2_B">Compiler le code source du projet</label>
+          </li>
+          <li>
+            <input type="radio" id="question2_C" name="question2" value="C" />
+            <label for="question2_C">Lancer automatiquement le serveur</label>
+          </li>
+        </ul>
+
+        <ul class="question">
+          Question 3
+          <strong
+            >Dans une architecture MERN, à quoi correspond le “M” ?
+          </strong>
+          <br />
+          <li>
+            <input
+              type="radio"
+              id="question3_A"
+              name="question3"
+              value="A"
+              
+            />
+            <label for="question3_A">MySQL</label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              id="question3_B"
+              name="question3"
+              value="B"
+            />
+            <label for="option2">MongoDB</label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              id="question3_C"
+              name="question3"
+              value="C"
+            />
+            <label for="option3">Meteor</label>
+          </li>
+        </ul>
+
+        <button id="submit">Submit</button>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

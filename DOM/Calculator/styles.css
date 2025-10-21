@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #c5bfa3;
+}
+
+header {
+  padding: 24px;
+ /* background-color: #f0f8ff; */
+ background-color: #d2b48c;
+  margin-bottom: 24px;
+  color: #3c5a40;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: 32px;
+  background: url("./assets/OIG2.jpeg");
+  padding: 12px;
+  background-repeat: no-repeat;
+  
+}
+
+#outer-box {
+  max-width: 960px; /* Or your desired maximum width */
+  width: 100%;
+  padding: 8px;
+  border: 1px solid salmon;
+  margin: auto;
+}
+
+
+
+#display-result {
+  border: 4px solid #333;
+  /*background-color: rgb(30, 210, 126);*/
+  background-color: #3c5a40;
+  height: 64px;
+  padding: 16px;
+  font-size: 24px;
+      font-family: "Bitcount Grid Single", system-ui;
+
+}
+
+
+#buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 56px);
+    gap: 3px;
+    margin-top: 6px;
+  
+}
+
+.span-two {
+    grid-column: span 2
+}
+
+button {
+    background-color: #f0f0f0;
+    border: 1px solid #f0f8ff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-family: "Bitcount Grid Single", system-ui;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}

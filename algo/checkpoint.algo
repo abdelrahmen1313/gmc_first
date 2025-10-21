@@ -2,13 +2,13 @@ ALGORITHM SENTENCER
 VAR
   sentence : STRING
   sentence_length : INTEGER := 0
-  number_of_words : INTEGER := 0
+  number_of_words : INTEGER := 1
   number_of_vowels : INTEGER := 0
   current_char : CHAR := "";
 
 BEGIN
-
  FUNCTION isVowel(caracter : STRING) : BOOLEAN
+  caracter := lowerCase(caracter)
   IF (caracter = "a" || caracter = "e" || caracter = "i" || caracter = "o") THEN
   RETURN TRUE
   ELSE 
@@ -17,6 +17,8 @@ BEGIN
  END_FUNCTION
  
  READ(sentence)
+ // asserting that the READ function already checks for empty strings
+ // and a unique single character is also a world
 
  WHILE (current_char <> ".")  DO
   IF (current_char = " " && sentence_length > 0) THEN

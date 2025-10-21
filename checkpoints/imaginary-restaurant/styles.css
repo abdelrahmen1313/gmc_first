@@ -90,6 +90,7 @@ a.nav-link {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
+  margin-top: 0;
 }
 
 #menu .card:hover {
@@ -111,19 +112,12 @@ a.nav-link {
 /* Small-screen fallback: let image size naturally for better responsiveness */
 @media (max-width: 767.98px) {
   #menu .card-img-top {
-    height: auto !important;
-    max-height: none !important;
-    object-fit: contain !important;
+    object-fit: cover !important;
   }
 }
 
 
-/* Ensure consistent vertical distribution inside card bodies */
-#menu .card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
+
 
 
 
@@ -138,16 +132,6 @@ a.nav-link {
 
 
 
-/* Responsive: let cards size naturally on small screens */
-@media (max-width: 767.98px) {
-  #menu .card {
-    height: auto;
-  }
-  #menu .card-img-top {
-    height: auto;
-    object-fit: contain;
-  }
-}
 
 form {
   display: flex;
